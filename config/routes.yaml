@@ -1,6 +1,11 @@
 homepage:
     path: /
     controller: App\Controller\HomepageController::indexAction
+
+suo:
+    path: /suo/{slug}
+    controller: App\Controller\HomepageController::dogAction
+
 veislynas:
     path: /veislynas.html
     controller: App\Controller\veislynasController::indexAction

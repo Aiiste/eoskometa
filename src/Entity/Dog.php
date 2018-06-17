@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ShowRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\DogRepository")
  * @Vich\Uploadable
  */
-class Show
+class Dog
 {
     use TimestampableEntity;
 
@@ -26,27 +26,37 @@ class Show
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $name;
 
     /**
-     * @Gedmo\Slug(fields={"title"})
+     * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(length=128, unique=true)
      */
     private $slug;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $text;
+    private $about;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=6)
+     */
+    private $gender;
+
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $gang;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="shows", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="dogs", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
@@ -64,23 +74,15 @@ class Show
         }
     }
 
-    /**
-     * @return mixed
-     */
     public function getSlug(): ?string
     {
         return $this->slug;
     }
 
-    /**
-     * @param mixed $slug
-     */
     public function setSlug(string $slug): void
     {
         $this->slug = $slug;
     }
-
-
 
     public function getImageFile()
     {
@@ -102,43 +104,51 @@ class Show
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getName(): ?string
     {
-        return $this->title;
+        return $this->name;
     }
 
-    public function setTitle(string $title): self
+    public function setName(string $name): self
     {
-        $this->title = $title;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getText(): ?string
+    public function getAbout(): ?string
     {
-        return $this->text;
+        return $this->about;
     }
 
-    public function setText(string $text): self
+    public function setAbout(?string $about): self
     {
-        $this->text = $text;
+        $this->about = $about;
 
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getUpdatedAt(): ?\DateTime
+    public function getGender(): ?string
     {
-        return $this->updatedAt;
+        return $this->gender;
     }
 
-    /**
-     * @param \DateTime $updatedAt
-     */
-    public function setUpdatedAt(\DateTime $updatedAt): void
+    public function setGender(string $gender): self
     {
-        $this->updatedAt = $updatedAt;
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    public function getGang(): ?string
+    {
+        return $this->gang;
+    }
+
+    public function setGang(string $gang): self
+    {
+        $this->gang = $gang;
+
+        return $this;
     }
 }

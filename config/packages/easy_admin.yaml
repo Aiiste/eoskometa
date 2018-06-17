@@ -13,14 +13,35 @@ easy_admin:
                 fields:
                     - { property: 'title' }
                     - { property: 'text' }
-                    - { property: 'image', type: 'image', base_path: '%app.path.dog_images%', template: 'vich_uploader_image.html.twig' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.shows_images%', template: 'vich_uploader_image.html.twig' }
             show:
                 fields:
                     - { property: 'title' }
                     - { property: 'text' }
-                    - { property: 'image', type: 'image', base_path: '%app.path.dog_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.shows_images%' }
             form:
                 fields:
                     - { property: 'title' }
                     - { property: 'text' }
+                    - { property: 'imageFile', type: 'vich_image' }
+        dogs:
+            class: App\Entity\Dog
+            list:
+                fields:
+                    - { property: 'name' }
+                    - { property: 'gender' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.dogs_images%', template: 'vich_uploader_image.html.twig' }
+            show:
+                fields:
+                    - { property: 'name' }
+                    - { property: 'gender' }
+                    - { property: 'gang' }
+                    - { property: 'about' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.dogs_images%' }
+            form:
+                fields:
+                    - { property: 'name' }
+                    - { property: 'gender' }
+                    - { property: 'gang' }
+                    - { property: 'about' }
                     - { property: 'imageFile', type: 'vich_image' }

@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 use App\Entity\Content;
+use App\Entity\Dog;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,5 +23,23 @@ class HomepageController extends AbstractController
         return $this->render('front/homepage.html.twig', [
             'news' => $news
         ]);
+    }
+
+    public function navigationAction(): Response
+    {
+        return $this->render('includes/navigation.html.twig', [
+            'dogs' => $this->getDoctrine()->getRepository(Dog::class)->findAll(),
+        ]);
+    }
+
+    public function dogAction(string $slug): Response
+    {
+        $dog = $this->getDoctrine()->getRepository(Dog::class)->findOneBy(['slug' => $slug]);
+
+        if ($dog === null) {
+            throw $this->createNotFoundException();
+        }
+
+        return $this->render('front/suo.html.twig', ['dog' => $dog]);
     }
 }

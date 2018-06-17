@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
                         <h1 class="text-uppercase">
-                            <strong>Excellmagic L'Dewey</strong>
+                            <strong>{{ dog.name }}</strong>
                         </h1>
                         <hr>
                     </div>
@@ -26,24 +26,18 @@
         <div id="container" >
             <div class="col-lg-10 mx-auto text-center">
                 <div id="image"class="popup-gallery" style=" padding: 20px">
-                    <a  href="img/portfolio/fullsize/dartas.jpg">
-                        <img  src="img/portfolio/fullsize/dartas.jpg" alt="" style = "max-width:30%; max-height:30%; margin: 2px; padding: 15px; " align="left" ;>
+                    <a  href="{{ vich_uploader_asset(dog, 'imageFile') }}">
+                        <img src="{{ vich_uploader_asset(dog, 'imageFile') }}" alt="" style = "max-width:30%; max-height:30%; margin: 2px; padding: 15px; " align="left" ;>
                     </a>
 
                     <div class="text-white " style=" white-space:normal; padding: 20px">
-                        <h4> Excellmagic L'Dewey </h4>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur placeat ea quod ipsa reiciendis
-                        praesentium dignissimos, repellendus maxime? Fugiat ipsa dignissimos, adipisci temporibus et rerum corporis
-                        repellendus natus ab tempore est ullam error sint quae officiis provident exercitationem excepturi iure bland
-                        itiis rem? Placeat provident ducimus quidem, optio recusandae expedita autem!
+                        <h4>{{ dog.name }}</h4>
+                        <p>{{ dog.about }}</p>
                     </div>
                 </div>
             </div>
     </section>
-
-
-
-
+    
     <!-- pedrigree lenteleeeee-->
 
     <section class = "bg-light" id = "lentele">
