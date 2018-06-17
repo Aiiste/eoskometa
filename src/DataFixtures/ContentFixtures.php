@@ -1,19 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Aiste
- * Date: 2018-05-19
- * Time: 14:34
- */
 
-namespace App\DataFixtures\ORM;
+namespace App\DataFixtures;
 
 use App\Entity\Content;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Factory;
 
-class LoadContent extends Fixture
+class ContentFixtures extends Fixture
 {
     private $faker;
 
