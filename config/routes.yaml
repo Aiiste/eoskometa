@@ -1,0 +1,21 @@
+homepage:
+    path: /
+    controller: App\Controller\HomepageController::indexAction
+veislynas:
+    path: /veislynas.html
+    controller: App\Controller\veislynasController::indexAction
+mususunys:
+    path: /mususunys.html
+    controller: App\Controller\mususunysController::indexAction
+patinai:
+    path: /patinai.html
+    controller: App\Controller\patinaiController::indexAction
+dartas:
+        path: /dartas.html
+        controller: App\Controller\dartasController::indexAction
+parodos:
+    path: /parodos.html
+    controller: App\Controller\parodosController::indexAction
+kontaktai:
+    path: /kontaktai.html
+    controller: App\Controller\kontaktaiController::indexAction
