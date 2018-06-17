@@ -1,0 +1,10 @@
+parameters:
+    app.path.dog_images: /uploads/images/dogs
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        dogs:
+            uri_prefix:         '%app.path.dog_images%'
+            upload_destination: '%kernel.root_dir%/../public%app.path.dog_images%'
