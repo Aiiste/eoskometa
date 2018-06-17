@@ -41,7 +41,9 @@ easy_admin:
             form:
                 fields:
                     - { property: 'name' }
+                    - { property: 'nickname' }
                     - { property: 'gender' }
                     - { property: 'gang' }
                     - { property: 'about' }
+                    - { property: 'pedigree' }
                     - { property: 'imageFile', type: 'vich_image' }

@@ -13,7 +13,7 @@
                         <hr>
                     </div>
                     <div class="col-lg-8 mx-auto">
-                        <p class="text-faded mb-5">Dartas</p>
+                        <p class="text-faded mb-5">{{ dog.nickname }}</p>
                     </div>
                 </div>
             </div>
@@ -37,45 +37,16 @@
                 </div>
             </div>
     </section>
-    
+
     <!-- pedrigree lenteleeeee-->
 
+    {% if dog.pedigree is not null %}
     <section class = "bg-light" id = "lentele">
         <center>
             <div class ="text-faded"> <h2>Pedigree</h2></div>
-            <table>
-                <tr>
-                    <td rowspan ="4">Excellmagic L'Broadway</td>
-                    <td rowspan = "2">Stardust Kipling Von Skaer SL</td>
-                    <td>Franz Kafka Von Skaer L</td>
-                </tr>
-                <tr>
-                    <td>Boondox Havana</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">Windswept's Rhythm of the Rain</td>
-                    <td>Riverwalk's Thunder Storm</td>
-                </tr>
-                <tr>
-                    <td>Windswept shepherd moon sl</td>
-                </tr>
-                <tr>
-                    <td rowspan ="4">	Kinchville Nice Girl for Excellmagic</td>
-                    <td rowspan = "2">Timmy v.d. Langbroeker WildHoek</td>
-                    <td>Zhoerka van der Tongelaar</td>
-                </tr>
-                <tr>
-                    <td>Brendy v.d. Langbroeker WildHoek</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">Renessans Kleopatra II</td>
-                    <td>Renessans Gerard Richard</td>
-                </tr>
-                <tr>
-                    <td>Renessans Alkiona</td>
-                </tr>
-            </table>
+            {{ dog.pedigree | raw }}
         </center>
     </section>
+    {% endif %}
 
 {% endblock %}

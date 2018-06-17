@@ -56,6 +56,18 @@ class Dog
     private $image;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $nickname;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     * @var string
+     */
+    private $pedigree;
+
+    /**
      * @Vich\UploadableField(mapping="dogs", fileNameProperty="image")
      * @var File
      */
@@ -149,6 +161,42 @@ class Dog
     {
         $this->gang = $gang;
 
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNickname(): ?string
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * @param string $nickname
+     * @return Dog
+     */
+    public function setNickname(string $nickname): Dog
+    {
+        $this->nickname = $nickname;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPedigree(): ?string
+    {
+        return $this->pedigree;
+    }
+
+    /**
+     * @param string $pedigree
+     * @return Dog
+     */
+    public function setPedigree(string $pedigree): Dog
+    {
+        $this->pedigree = $pedigree;
         return $this;
     }
 }
